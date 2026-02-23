@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpongeBob Music Page</title>
+
+    <style>
+        body {
+            background-color: #00BFFF;
+            color: yellow;
+            text-align: center;
+            font-family: Comic Sans MS, Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: relative;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>SpongeBob - Sweet Victory 🎤</h1>
+
+    <!-- YouTube Video -->
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/k9iYm9PEAHg"
+        frameborder="0" allowfullscreen>
+    </iframe>
+
+    <h2>Click the button to animate!</h2>
+
+    <div id="box"></div>
+
+    <button onclick="moveBox()">Start Animation</button>
+
+    <script>
+        function moveBox() {
+            var box = document.getElementById("box");
+            var position = 0;
+            var interval = setInterval(frame, 5);
+
+            function frame() {
+                if (position == 300) {
+                    clearInterval(interval);
+                } else {
+                    position++;
+                    box.style.left = position + "px";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
